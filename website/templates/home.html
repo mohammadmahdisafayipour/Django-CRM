@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css"
+        integrity="sha512-i1b/nzkVo97VN5WbEtaPebBG8REvjWeqNclJ6AItj7msdVcaveKrlIIByDpvjk5nwHjXkIqGZscVxOrTb9tsMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    {% block content%}
+
+    {% if user.is_authenticated %}
+    <h1>Hello World</h1>
+    {% else %}
+    <div class="col-lg-7 col-md-6 ">
+        <h1>Hello world</h1>
+        <br>
+        <br>
+        <form action="{%url 'home'%}" method="POST">
+            {% csrf_token %}
+
+
+            
+            <div class="mb-3">
+
+                <input type="text" class="form-control" name="username" placeholder="username:" required>
+
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="password:" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+
+
+
+        </form>
+    </div>
+    {% endif %}
+    {% endblock %}
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+        integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
