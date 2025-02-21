@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  {% block content%}
+
+  <h1>Customer Record:</h1>
+  <br>
+
+
+  <div class="card col-4">
+    <div class="card-header">
+      {{record.first_name}}
+      {{record.last_name}}
+
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>email:</strong>{{record.email}} <br>
+        <strong>phone:</strong>{{record.phone}}<br>
+        <strong>address:</strong>{{record.address}}<br>
+        <strong>city:</strong>{{record.city}} <br>
+        <strong>state:</strong>{{record.state}} <br>
+        <strong>zipcode:</strong>{{record.zipcode}} <br>
+        <strong>created_at:</strong>{{record.created_at}} <br>
+        <strong>id:</strong>{{record.id}} <br>
+      </p>
+      
+    </div>
+  </div>
+  <br>
+  <br>
+  <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+  <a href="{% url 'dynamic_delete' pk=record.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update_dynamic' pk=record.id %}" class="btn btn-secondary">Update Record</a>
+
+  {% endblock %}
+</body>
+
+</html>

@@ -62,6 +62,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'django_project_youtube_main.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

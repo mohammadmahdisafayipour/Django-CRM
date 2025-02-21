@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% block content%}
+
+    <div class="col-md-6 offset-md-3">
+
+        <h1>Add Record</h1>
+        <br>
+
+        <form action="." method="post" class="">
+
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <br>
+            <button class="btn btn-secondary" type="submit">Add Record</button>
+        </form>
+
+    </div>
+
+{% endblock %}
+</body>
+</html>
